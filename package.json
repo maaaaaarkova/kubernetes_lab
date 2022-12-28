@@ -1,0 +1,17 @@
+{
+    "name": "kpi-devops",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "main": "lutenitsa.js",
+
+    "scripts": {
+      "start": "node lutenitsa.js"
+    },
+    
+    "author": "",
+    
+    "dependencies": {
+      "express": "^4.16.1",
+      "utf8": "^3.0.0"
+    }
+  }

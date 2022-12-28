@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - image: maaaaaarkova/kpi.devops.2022:latest
+        name: node-app
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 7
+          periodSeconds: 7
+        ports:
+        - containerPort: 80
